@@ -1,7 +1,14 @@
 package com.example.test.data
 
-import android.util.Log
+import javax.inject.Inject
+import javax.inject.Singleton
 
-interface UserRepository {
-    fun sayMeow()
+@Singleton
+class UserRepository @Inject constructor(
+    private val userLocalDataSource: UserLocalDataSource,
+    private val userRemoteDataSource: UserRemoteDataSource
+) {
+    fun sayMeow() {
+        userLocalDataSource.sayMeow()
+    }
 }

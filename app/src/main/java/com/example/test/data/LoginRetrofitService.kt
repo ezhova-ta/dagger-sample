@@ -1,4 +1,5 @@
 package com.example.test.data
 
-interface LocalUserStorage {
+class LoginRetrofitService {
+
 }

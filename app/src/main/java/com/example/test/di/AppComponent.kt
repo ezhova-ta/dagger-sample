@@ -1,9 +1,13 @@
 package com.example.test.di
 
-import com.example.test.MainViewModel
+import com.example.test.MainActivity
 import dagger.Component
+import javax.inject.Singleton
 
-@Component(modules = [AppModule::class])
+@Singleton
+@Component(modules = [NetworkModule::class])
 interface AppComponent {
-    fun inject(mainViewModel: MainViewModel)
+    // This tells Dagger that MainActivity requests injection so the graph needs to
+    // satisfy all the dependencies of the fields that MainActivity is requesting.
+    fun inject(mainActivity: MainActivity)
 }
