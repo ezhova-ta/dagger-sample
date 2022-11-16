@@ -1,8 +1,8 @@
 package com.example.test.di.components
 
 import com.example.test.di.modules.LocalStoreModule
-import com.example.test.di.modules.SubcomponentsModule
 import dagger.Component
+import dagger.Module
 import javax.inject.Singleton
 
 @Singleton
@@ -12,3 +12,6 @@ interface AppComponent {
     // can use it to obtain new instances of LoginComponent
     fun loginComponent(): LoginComponent.Factory
 }
+
+@Module(subcomponents = [LoginComponent::class])
+class SubcomponentsModule
