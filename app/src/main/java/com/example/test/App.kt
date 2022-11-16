@@ -3,7 +3,6 @@ package com.example.test
 import android.app.Application
 import com.example.test.di.components.AppComponent
 import com.example.test.di.components.DaggerAppComponent
-import com.example.test.di.modules.LocalStoreModule
 import timber.log.Timber
 
 // appComponent lives in the Application class to share its lifecycle

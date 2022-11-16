@@ -2,9 +2,12 @@ package com.example.test.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.example.test.App
 import com.example.test.R
 import com.example.test.SimplifiedLoginViewModel
+import com.example.test.databinding.ActivityLoginBinding
 import com.example.test.di.components.LoginComponent
 import javax.inject.Inject
 
@@ -25,7 +28,16 @@ class LoginActivity : AppCompatActivity() {
         // Now viewModel is available
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        val binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        if(savedInstanceState == null) showFragment()
+    }
+
+    private fun showFragment() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<LoginUsernameFragment>(R.id.fragmentContainerView)
+        }
     }
 
     override fun onResume() {
