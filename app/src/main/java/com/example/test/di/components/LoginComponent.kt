@@ -1,7 +1,7 @@
 package com.example.test.di.components
 
+import com.example.test.di.ActivityScope
 import com.example.test.ui.LoginActivity
-import com.example.test.data.ActivityScope
 import com.example.test.di.modules.LoginModule
 import com.example.test.ui.LoginPasswordFragment
 import com.example.test.ui.LoginUsernameFragment
