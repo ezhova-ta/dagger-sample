@@ -1,6 +1,7 @@
 package com.example.test.di.components
 
 import android.content.Context
+import com.example.test.di.ViewModelBuilderModule
 import com.example.test.di.modules.LocalStoreModule
 import dagger.BindsInstance
 import dagger.Component
@@ -8,7 +9,11 @@ import dagger.Module
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [LocalStoreModule::class, SubcomponentsModule::class])
+@Component(modules = [
+    LocalStoreModule::class,
+    SubcomponentsModule::class,
+    ViewModelBuilderModule::class
+])
 interface AppComponent {
     @Component.Factory
     interface Factory {

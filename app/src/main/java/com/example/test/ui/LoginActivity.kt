@@ -6,14 +6,11 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.test.App
 import com.example.test.R
-import com.example.test.SimplifiedLoginViewModel
 import com.example.test.databinding.ActivityLoginBinding
 import com.example.test.di.components.LoginComponent
-import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
     lateinit var loginComponent: LoginComponent
-    @Inject lateinit var viewModel: SimplifiedLoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // LoginComponent is created in the activity's onCreate() method,
@@ -38,10 +35,5 @@ class LoginActivity : AppCompatActivity() {
             setReorderingAllowed(true)
             add<LoginUsernameFragment>(R.id.fragmentContainerView)
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewModel.onScreenResumed()
     }
 }

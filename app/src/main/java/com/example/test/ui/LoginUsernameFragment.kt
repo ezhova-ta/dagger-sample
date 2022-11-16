@@ -6,18 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.test.SimplifiedLoginViewModel
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.test.databinding.FragmentLoginUsernameBinding
 import javax.inject.Inject
 
 class LoginUsernameFragment : Fragment() {
-    @Inject lateinit var viewModel: SimplifiedLoginViewModel
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel by viewModels<LoginViewModel> { viewModelFactory }
     private var _binding: FragmentLoginUsernameBinding? = null
     private val binding get() = _binding!!
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         (activity as LoginActivity).loginComponent.inject(this)
+        viewModel
     }
 
     override fun onCreateView(

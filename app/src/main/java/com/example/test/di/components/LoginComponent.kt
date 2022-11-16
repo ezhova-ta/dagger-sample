@@ -2,6 +2,7 @@ package com.example.test.di.components
 
 import com.example.test.ui.LoginActivity
 import com.example.test.data.ActivityScope
+import com.example.test.di.modules.LoginModule
 import com.example.test.ui.LoginPasswordFragment
 import com.example.test.ui.LoginUsernameFragment
 import dagger.Subcomponent
@@ -13,7 +14,7 @@ import dagger.Subcomponent
 // Classes annotated with @ActivityScope are scoped to the graph and the same
 // instance of that type is provided every time the type is requested.
 @ActivityScope
-@Subcomponent
+@Subcomponent(modules = [LoginModule::class])
 interface LoginComponent {
     @Subcomponent.Factory
     interface Factory {
