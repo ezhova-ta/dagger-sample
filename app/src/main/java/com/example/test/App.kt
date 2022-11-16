@@ -14,9 +14,8 @@ class App : Application() {
         super.onCreate()
         // Reference to the application graph that is used across the whole app
         appComponent = DaggerAppComponent
-            .builder()
-            .localStoreModule(LocalStoreModule(this))
-            .build()
+            .factory()
+            .create(this)
         Timber.plant(Timber.DebugTree())
     }
 }

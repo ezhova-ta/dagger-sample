@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 // @Module informs Dagger that this class is a Dagger Module
 @Module
-class LocalStoreModule(private val context: Context) {
+class LocalStoreModule {
     // @Provides tell Dagger how to create instances of the type that this function
     // returns (i.e. LoginRetrofitService).
     // Function parameters are the dependencies of this type.
@@ -18,10 +18,5 @@ class LocalStoreModule(private val context: Context) {
         // Whenever Dagger needs to provide an instance of type LoginRetrofitService,
         // this code (the one inside the @Provides method) is run.
         return SharedPreferencesManager(context)
-    }
-
-    @Provides
-    fun provideContext(): Context {
-        return context
     }
 }
