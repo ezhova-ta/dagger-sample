@@ -6,6 +6,10 @@ import javax.inject.Inject
 
 // A unique instance of SimplifiedLoginViewModel is provided in Components
 // annotated with @ActivityScope
+
+/**
+ * Not an Android Architecture Components ViewModel
+ */
 @ActivityScope
 class SimplifiedLoginViewModel @Inject constructor(
     private val userRepository: UserRepository

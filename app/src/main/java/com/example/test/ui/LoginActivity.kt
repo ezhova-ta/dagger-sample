@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.test.App
 import com.example.test.R
 import com.example.test.SimplifiedLoginViewModel
-import com.example.test.di.LoginComponent
+import com.example.test.di.components.LoginComponent
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {

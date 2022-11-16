@@ -1,4 +1,4 @@
-package com.example.test.di
+package com.example.test.di.components
 
 import com.example.test.ui.LoginActivity
 import com.example.test.data.ActivityScope

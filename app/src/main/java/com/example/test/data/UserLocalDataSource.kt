@@ -3,9 +3,10 @@ package com.example.test.data
 import timber.log.Timber
 import javax.inject.Inject
 
-class UserLocalDataSource @Inject constructor() {
+class UserLocalDataSource @Inject constructor(
+    private val sharedPreferencesManager: SharedPreferencesManager
+) {
     fun sayMeow() {
-        Timber.tag("test_dagger")
-        Timber.d("meow ^-^")
+        sharedPreferencesManager.sayMeow()
     }
 }
